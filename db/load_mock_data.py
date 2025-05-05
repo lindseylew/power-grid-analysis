@@ -19,11 +19,10 @@ cur = conn.cursor()
 
 for _ , row in df.iterrows():
     cur.execute("""
-        INSERT INTO grid_data (timestamp, region, voltage_kv, current_a, frequency_hz, load_mw)
+        INSERT INTO grid_data (period, region, voltage_kv, current_a, frequency_hz, load_mw)
         VALUES (%s, %s, %s, %s, %s, %s)
     """, (
-        row['timestamp'],
-        row['region'],
+        row['period'],
         row['voltage_kV'],
         row['current_A'],
         row['frequency_Hz'],

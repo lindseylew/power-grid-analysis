@@ -17,8 +17,7 @@ cur = conn.cursor()
 cur.execute("""
     CREATE TABLE IF NOT EXISTS grid_data (
         id SERIAL PRIMARY KEY,
-        timestamp TIMESTAMP NOT NULL,
-        region TEXT NOT NULL,
+        period TIMESTAMP NOT NULL,
         voltage_kv NUMERIC NOT NULL,
         current_a NUMERIC NOT NULL,
         frequency_hz NUMERIC NOT NULL,
